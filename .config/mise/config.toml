@@ -1,0 +1,11 @@
+[tools]
+cargo-binstall = "latest"
+go             = "latest"
+neovim         = "nightly"
+node = "24"
+yamlfmt        = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
+activate_aggressive                 = true
+experimental                        = true

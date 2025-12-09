@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 7,
+  "env": {
+    "API_TIMEOUT_MS": "1800000",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "8000",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/skill-activation-prompt.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Hero.aiff"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Session Complete' -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/post-tool-use-tracker.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "feature-dev@claude-code-plugins": false,
+    "pr-review-toolkit@claude-code-plugins": false,
+    "commit-commands@claude-code-plugins": false,
+    "backend-development@claude-code-workflows": false,
+    "code-review-ai@claude-code-workflows": false,
+    "error-diagnostics@claude-code-workflows": false,
+    "application-performance@claude-code-workflows": false,
+    "javascript-typescript@claude-code-workflows": false,
+    "compounding-engineering@every-marketplace": true,
+    "context-management@claude-code-workflows": true,
+    "claude-opus-4-5-migration@claude-code-plugins": true,
+    "performance-optimizer@claude-code-templates": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 7,
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "72d7f88f0ae14d9cbf8368c353b2e468.ukSO2mQGAHBC1LPK",
+    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
+    "API_TIMEOUT_MS": "1800000",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "8000",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
+    "DISABLE_COST_WARNINGS": "1"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Hero.aiff"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Session Complete' -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] File modified: $CLAUDE_TOOL_FILE_PATH\" >> ~/.claude/changes.log"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] File created: $CLAUDE_TOOL_FILE_PATH\" >> ~/.claude/changes.log"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] File modified: $CLAUDE_TOOL_FILE_PATH\" >> ~/.claude/changes.log"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] File created: $CLAUDE_TOOL_FILE_PATH\" >> ~/.claude/changes.log"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "feature-dev@claude-code-plugins": true,
+    "pr-review-toolkit@claude-code-plugins": true,
+    "commit-commands@claude-code-plugins": true,
+    "backend-development@claude-code-workflows": true,
+    "code-review-ai@claude-code-workflows": true,
+    "error-diagnostics@claude-code-workflows": true,
+    "application-performance@claude-code-workflows": true,
+    "javascript-typescript@claude-code-workflows": true
+  }
+}
