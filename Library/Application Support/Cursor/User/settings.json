@@ -1,0 +1,541 @@
+{
+  // =====================================================================================
+  // OS & TERMINAL (External + Integrated)
+  // =====================================================================================
+  "terminal.external.osxExec": "Warp.app", // or "Terminal.app"
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "debug.console.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.suggest.enabled": true,
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.pinnedTabSizing": "shrink",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.wrapTabs": true,
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#999999"
+  },
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.indent": 11,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.settings.editor": "json",
+  "window.density.editorTabHeight": "compact",
+  "window.commandCenter": true,
+  // =====================================================================================
+  // EDITOR — CORE BEHAVIOR & LOOK
+  // =====================================================================================
+  "breadcrumbs.enabled": true,
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "'Cascadia Code', 'FiraCode Nerd Font', 'CaskaydiaCove Nerd Font', 'Droid Sans Mono', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.smoothScrolling": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.linkedEditing": true,
+  "editor.detectIndentation": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.stickyScroll.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  // =====================================================================================
+  // EDITOR — MINIMAP & INLINE
+  // =====================================================================================
+  "editor.minimap.enabled": true,
+  "editor.minimap.size": "fill",
+  "editor.minimap.maxColumn": 100,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  // =====================================================================================
+  // EDITOR — INTELLISENSE, HINTS & Codelens
+  // =====================================================================================
+  "diffEditor.codeLens": true,
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "javascript.referencesCodeLens.enabled": true,
+  // =====================================================================================
+  // EDITOR — FORMATTING & ON SAVE
+  // =====================================================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  // =====================================================================================
+  // SEMANTIC TOKEN CUSTOMIZATION (Theme-Specific)
+  // =====================================================================================
+  "editor.semanticTokenColorCustomizations": {
+    "[Nebula Oni (Cerberus)]": {
+      "rules": {
+        "function.declaration": {
+          "foreground": "#2FDE73",
+          "fontStyle": "bold italic"
+        },
+        "function": "#2FDE73"
+      }
+    }
+  },
+  // =====================================================================================
+  // FILES — SAVE, ENCODING & TRIMMING
+  // =====================================================================================
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "off",
+  "files.autoSaveDelay": 1000,
+  "files.autoSaveWhenNoErrors": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "json.schemaDownload.enable": true,
+  // =====================================================================================
+  // FILES — EXCLUDE & WATCHER EXCLUDE
+  // =====================================================================================
+  "files.exclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "files.watcherExclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true,
+    "**/node_modules/**": false,
+    "**/dist/**": false
+  },
+  // =====================================================================================
+  // EXPLORER & SEARCH
+  // =====================================================================================
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+  // =====================================================================================
+  // GIT, GITHUB & GITLENS
+  // =====================================================================================
+  "git.autofetch": true,
+  "git.autoStash": true,
+  "git.enableSmartCommit": true,
+  "git.mergeEditor": true,
+  "git.useEditorAsCommitInput": false,
+  "git.autorefresh": true,
+  "git.confirmSync": false,
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+  "gitlens.graph.dimMergeCommits": true,
+  "gitlens.views.repositories.showIncomingActivity": true,
+  "gitlens.views.repositories.showStashes": true,
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.ai.vscode.model": "copilot:gpt-4o",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+  // =====================================================================================
+  // COPILOT & AI ASSISTANTS (VSCode)
+  // =====================================================================================
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  // =====================================================================================
+  // HTTP & SECURITY
+  // =====================================================================================
+  "http.experimental.systemCertificatesV2": true,
+  "http.proxyStrictSSL": false,
+  "http.proxySupport": "fallback",
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  // =====================================================================================
+  // WINDOW & DEBUG
+  // =====================================================================================
+  "debug.toolBarLocation": "commandCenter",
+  "update.releaseTrack": "prerelease",
+  // =====================================================================================
+  // LANGUAGE OVERRIDES — GLOBAL JS/TS INLAY HINTS
+  // =====================================================================================
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  // =====================================================================================
+  // LANGUAGE OVERRIDES — BY FILETYPE
+  // =====================================================================================
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[go.mod]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[markdown]": {
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[plaintext]": {
+    "editor.unicodeHighlight.invisibleCharacters": true
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // =====================================================================================
+  // GO TOOLING
+  // =====================================================================================
+  "go.formatTool": "gofmt",
+  "go.lintTool": "golangci-lint",
+  "go.toolsManagement.autoUpdate": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.testFlags": ["-v"],
+  // =====================================================================================
+  // LUA (Sumneko) SETTINGS
+  // =====================================================================================
+  "Lua.codeLens.enable": false,
+  "Lua.workspace.library": [
+    "~/.local/share/nvim/lazy/",
+    "~/.local/share/nvim/mason"
+  ],
+  // =====================================================================================
+  // QUALITY/TYPE CHECKERS & LINT
+  // =====================================================================================
+  "eslint.useESLintClass": true,
+  "eslint.format.enable": true,
+  "jest.runMode": "on-demand",
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "serverUrl": "https://sonar.cloud.bayer.com",
+      "connectionId": "https-sonar-cloud-bayer-com-"
+    }
+  ],
+  "sonarlint.ls.javaHome": "/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home",
+  "sonarlint.rules": {
+    "typescript:S6819": {
+      "level": "off"
+    },
+    "typescript:S2301": {
+      "level": "off"
+    },
+    "typescript:S6759": {
+      "level": "off"
+    }
+  },
+  // =====================================================================================
+  // THEMES & THEME EXTENSIONS
+  // =====================================================================================
+  "oneDarkPro.bold": true,
+  "catppuccin-noctis-icons.hidesExplorerArrows": false,
+  "nebulaOni.update.restoreConfiguration": {
+    "themeSettings": {
+      "background": "Grey",
+      "main": "Bumblebee",
+      "highlight": "Ultra Violet",
+      "focusBorder": "ON",
+      "fontStyle": "Italic",
+      "syntaxBrightness": "Normal",
+      "comments": "Dark Violet",
+      "favorite": "OFF"
+    },
+    "favoriteSettings": {
+      "background": "Glacial Blue",
+      "main": "Sakura",
+      "highlight": "Ultra Violet",
+      "focusBorder": "ON",
+      "fontStyle": "Italic",
+      "syntaxBrightness": "Dimmed",
+      "comments": "Dark Magenta",
+      "favorite": "Nebula Oni (Pegasus)"
+    }
+  },
+  // =====================================================================================
+  // RANDOM / POWER-USER EXTENSIONS & INTEGRATIONS
+  // =====================================================================================
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.composer.shouldAllowCustomModes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.diffs.useCharacterLevelDiffs": true,
+  "cursor.terminal.usePreviewBox": true,
+  "cursor.windowSwitcher.sidebarHoverCollapsed": true,
+  "cursorStats.showTotalRequests": true,
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
+  "cursor.composer.queueMessageDefaultBehavior": "queue",
+  "cursor.composer.usageSummaryDisplay": "always",
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": [],
+  "kilo-code.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "cd",
+    "go",
+    "git",
+    "npm",
+    "nx",
+    "nx run",
+    "npm run",
+    "npm run test -- --silent --libs features-common-reporting -- ViewReport.spec.tsx",
+    "make",
+    "npm test",
+    "npm install",
+    "tsc"
+  ],
+  "kilo-code.deniedCommands": [],
+  "traycer.additionalAgents": [
+    "Claude Code",
+    "Augment",
+    "Roo Code",
+    "Codex",
+    "Augment",
+    "Export as Markdown",
+    "Amp",
+    "Codex Extension",
+    "Claude Code Extension"
+  ],
+  "traycer.enableAutoAnalysis": false,
+  "traycer.enableCommentsHighlighting": true,
+  "amp.url": "https://ampcode.com/",
+  "amp.experimental.connections": true,
+  "amp.tools.disable": [
+    "mcp__playwright__browser_click",
+    "mcp__playwright__browser_close",
+    "mcp__playwright__browser_console_messages",
+    "mcp__playwright__browser_drag",
+    "mcp__playwright__browser_evaluate",
+    "mcp__playwright__browser_file_upload",
+    "mcp__playwright__browser_fill_form",
+    "mcp__playwright__browser_handle_dialog",
+    "mcp__playwright__browser_hover",
+    "mcp__playwright__browser_install",
+    "mcp__playwright__browser_navigate",
+    "mcp__playwright__browser_navigate_back",
+    "mcp__playwright__browser_network_requests",
+    "mcp__playwright__browser_press_key",
+    "mcp__playwright__browser_resize",
+    "mcp__playwright__browser_select_option",
+    "mcp__playwright__browser_snapshot",
+    "mcp__playwright__browser_tabs",
+    "mcp__playwright__browser_take_screenshot",
+    "mcp__playwright__browser_type",
+    "mcp__playwright__browser_wait_for"
+  ],
+  "amp.mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--headless", "--isolated"],
+      "_target": "global"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {}
+    }
+  },
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.alignEntries": true,
+  "augment.completions.enableAutomaticCompletions": false,
+  "augment.nextEdit.enableGlobalBackgroundSuggestions": true,
+  "augment.nextEdit.showDiffInHover": true,
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
+  "totalTypeScript.hiddenTips": [
+    "typeof",
+    "passing-generics-to-types",
+    "returntype-utility-type",
+    "generic-slots-in-functions",
+    "interface-with-generics",
+    "record-utility-type",
+    "type-alias-with-generics",
+    "omit-utility-type",
+    "readonly-utility-type",
+    "keyof",
+    "type-alias-with-multiple-generics",
+    "never-keyword",
+    "required-utility-type",
+    "partial-utility-type",
+    "type-predicate",
+    "mapped-type",
+    "as-const",
+    "as-const-on-object",
+    "in-operator-narrowing",
+    "conditional-type",
+    "tuple-type",
+    "exclude-utility-type",
+    "pick-utility-type",
+    "interface-with-multiple-generics",
+    "non-null-expression",
+    "parameters-utility-type",
+    "nonnullable-utility-type",
+    "awaited-utility-type",
+    "extract-utility-type",
+    "nested-conditional-type",
+    "infer",
+    "remapping-in-mapped-type"
+  ],
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "astro.content-intellisense": true,
+  // =====================================================================================
+  // VENDOR / SERVICE INTEGRATIONS
+  // =====================================================================================
+  "datadog.connection.oauth.setup.domain": "us5.datadoghq.com/",
+  "amp.gpt5": true,
+  "amp.permissions": [
+    {
+      "tool": "Bash",
+      "action": "ask",
+      "matches": {
+        "cmd": ["*rm*rf*", "*find*exec*", "*find*delete*", "*git*push*"]
+      }
+    },
+    {
+      "tool": "*",
+      "action": "allow",
+      "matches": {}
+    },
+    {
+      "tool": "Bash",
+      "action": "allow",
+      "matches": {
+        "cmd": "nx run features-common-reporting:test --silent --testPathPattern=libs/features/common/reporting/src/components/view-report/ViewReport.spec.tsx"
+      }
+    }
+  ],
+  "editor.accessibilitySupport": "off",
+  "editor.experimentalGpuAcceleration": "off",
+  "terminal.integrated.enableImages": true,
+  "amazonQ.suppressPrompts": {
+    "amazonQChatPairProgramming": true,
+    "amazonQChatDisclaimer": true
+  },
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "testExplorer.useNativeTesting": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "Lua.hint.enable": true,
+  "Lua.hint.setType": true,
+  "Lua.semantic.keyword": true,
+  "Lua.type.inferParamType": true,
+  "cursor.enable_agent_window_setting": true,
+  "typescript.tsserver.maxTsServerMemory": 5000,
+  "geminicodeassist.displayInlineContextHint": false,
+  "Lua.hint.awaitPropagate": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "amp.tab.enabled": false,
+  "database-client.autoSync": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "aws.cloudformation.telemetry.enabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.terminal.useEnvFile": true,
+  "python.terminal.shellIntegration.enabled": true,
+  "amp.experimental.dojoMode": true,
+  "amp.experimental.planMode": true,
+  "amp.experimental.reviewSubagent": true,
+  "amp.guidanceFiles.specs": true,
+  "amp.tab.experimental.review": true,
+  "amp.tab.experimental.showHotStreakProgress": true,
+  "amp.tab.experimental.unobtrusiveDiffs": true,
+  "amp.tab.hoverDiagnosticSuggestions": true,
+  "gitlens.outputLevel": "error",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "symbols",
+  "markdownlint.lintWorkspaceGlobs": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "!**/*.code-search",
+    "!**/bower_components",
+    "!**/node_modules",
+    "!**/.git",
+    "!**/vendor",
+    "!**/*.mdc"
+  ],
+  "geminicodeassist.project": "citric-thought-vrqlm"
+}
