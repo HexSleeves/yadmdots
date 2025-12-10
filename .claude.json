@@ -1,5 +1,5 @@
 {
-  "numStartups": 98,
+  "numStartups": 100,
   "installMethod": "global",
   "autoUpdates": true,
   "customApiKeyResponses": {
@@ -10,7 +10,7 @@
   },
   "tipsHistory": {
     "new-user-warmup": 8,
-    "plan-mode-for-complex-tasks": 94,
+    "plan-mode-for-complex-tasks": 99,
     "terminal-setup": 94,
     "memory-command": 96,
     "theme-command": 86,
@@ -21,8 +21,8 @@
     "install-github-app": 97,
     "drag-and-drop-images": 98,
     "paste-images-mac": 98,
-    "double-esc-code-restore": 88,
-    "continue": 90,
+    "double-esc-code-restore": 99,
+    "continue": 100,
     "shift-tab": 94,
     "image-paste": 94,
     "tab-toggle-thinking": 94,
@@ -33,7 +33,7 @@
     "custom-commands": 97,
     "stickers-command": 86,
     "git-worktrees": 94,
-    "default-permission-mode-config": 90,
+    "default-permission-mode-config": 100,
     "frontend-design-plugin": 78,
     "ide-upsell-external-terminal": 96
   },
@@ -92,17 +92,17 @@
       "exampleFilesGeneratedAt": 1765161656132,
       "hasCompletedProjectOnboarding": true,
       "lastTotalWebSearchRequests": 0,
-      "lastCost": 0.15526205,
-      "lastAPIDuration": 42557,
-      "lastToolDuration": 7,
-      "lastDuration": 140403,
-      "lastLinesAdded": 37,
-      "lastLinesRemoved": 1,
-      "lastTotalInputTokens": 691,
-      "lastTotalOutputTokens": 1802,
-      "lastTotalCacheCreationInputTokens": 29797,
-      "lastTotalCacheReadInputTokens": 113926,
-      "lastSessionId": "637782f4-d886-42d2-9bb6-27f3452e06d7"
+      "lastCost": 1.2061625500000002,
+      "lastAPIDuration": 597219,
+      "lastToolDuration": 101919,
+      "lastDuration": 1378007,
+      "lastLinesAdded": 1333,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 35567,
+      "lastTotalOutputTokens": 28272,
+      "lastTotalCacheCreationInputTokens": 108527,
+      "lastTotalCacheReadInputTokens": 1211361,
+      "lastSessionId": "b43c61cb-fa74-458d-b40b-e99b7e02f0c2"
     },
     "/Users/jacob.lecoq.ext/Projects/bayer_projects/gc-agency-ui-monorepo": {
       "allowedTools": [],
@@ -509,7 +509,7 @@
     "e32cb1ac-ad90-4c02-868f-d95c8d6d4f8a": {
       "hasAccess": false,
       "hasAccessNotAsDefault": false,
-      "timestamp": 1765315432676
+      "timestamp": 1765395918545
     }
   },
   "lastPlanModeUse": 1764391520271,

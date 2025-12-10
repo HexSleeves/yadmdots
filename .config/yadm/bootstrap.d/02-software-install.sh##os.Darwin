@@ -80,81 +80,20 @@ fi
 # Install Homebrew
 install_homebrew_if_missing
 
-# Install essential command-line tools via Homebrew
-echo "Installing essential command-line tools..."
-
-# Core tools from FIXES.md
-install_if_missing "gh" "brew install gh" "GitHub CLI"
-install_if_missing "yadm" "brew install yadm" "YADM (Yet Another Dotfiles Manager)"
-
-# Additional essential tools
-brew_tools=(
-    "bat"       # Better cat
-    "curl"      # HTTP client
-    "eza"       # Better ls
-    "fd"        # Better find
-    "fzf"       # Fuzzy finder
-    "git-delta" # Better git diff
-    "git"       # Git
-    "htop"      # Process viewer
-    "jq"        # JSON processor
-    "ripgrep"   # Better grep
-    "tree"      # Directory tree viewer
-    "wget"      # File downloader
-    "yq"        # YAML processor
-)
-
-for tool in "${brew_tools[@]}"; do
-    install_if_missing "$tool" "brew install $tool" "$tool"
-done
-
-# Install GUI applications via Homebrew Cask
-echo "Installing GUI applications..."
-
-# Applications from FIXES.md
-gui_apps=(
-    "google-chrome" # Chrome browser
-    "warp"          # Warp terminal
-    # "cursor"                      # Cursor editor
-    # "visual-studio-code-insiders" # VSCode Insiders
-)
-
-for app in "${gui_apps[@]}"; do
-    if ! brew list --cask "$app" >/dev/null 2>&1; then
-        echo "Installing ${app}..."
-        if brew install --cask "$app"; then
-            echo "✅ Successfully installed ${app}"
-        else
-            echo "❌ Failed to install ${app}"
-        fi
+# Install packages via Brewfile
+if [[ -f "${HOME}/.config/yadm/Brewfile" ]]; then
+    echo "📦 Installing packages from Brewfile..."
+    # Ensure bundle tap is installed
+    brew tap homebrew/bundle
+    
+    if brew bundle install --file="${HOME}/.config/yadm/Brewfile"; then
+        echo "✅ Brewfile installation successful"
     else
-        echo "✅ ${app} already installed"
+        echo "⚠️  Some Brewfile packages failed to install"
     fi
-done
-
-# Install additional useful applications
-additional_apps=(
-    "bitwarden" # Password manager
-    "rectangle" # Window management
-    "raycast"   # Spotlight replacement
-    # "1password"  # Password manager
-    "cleanmymac" # System cleaner
-    "spotify"    # Music streaming
-)
-
-echo "Installing additional useful applications..."
-for app in "${additional_apps[@]}"; do
-    if ! brew list --cask "$app" >/dev/null 2>&1; then
-        echo "Installing ${app}..."
-        if brew install --cask "$app" 2>/dev/null; then
-            echo "✅ Successfully installed ${app}"
-        else
-            echo "⚠️  Skipped ${app} (may not be available or already installed via other means)"
-        fi
-    else
-        echo "✅ ${app} already installed"
-    fi
-done
+else
+    echo "⚠️  Brewfile not found at ${HOME}/.config/yadm/Brewfile"
+fi
 
 # Install mise (version manager)
 install_if_missing "mise" "curl https://mise.run | sh" "mise (version manager)"
@@ -166,22 +105,41 @@ elif [[ -f "${HOME}/.cargo/bin/mise" ]]; then
     export PATH="${HOME}/.cargo/bin:${PATH}"
 fi
 
-# Install Rust via mise (preferred over rustup for consistency)
-if command -v mise >/dev/null 2>&1; then
-    echo "Installing/updating Rust via mise..."
-    if mise use --global rust@latest; then
-        echo "✅ Rust installed via mise"
-        # Also install cargo-binstall for faster cargo installs
-        if mise use --global --yes cargo-binstall; then
-            echo "✅ cargo-binstall installed"
-        fi
+# Install Rust (prefer rustup, fallback to mise)
+echo "Installing/updating Rust..."
+
+if ! command -v rustup >/dev/null 2>&1; then
+    echo "Installing Rust via rustup..."
+    if curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y; then
+        echo "✅ Rust installed via rustup"
+        source "$HOME/.cargo/env"
     else
-        echo "⚠️  Failed to install Rust via mise, falling back to rustup..."
-        install_if_missing "rustc" "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y" "Rust (via rustup)"
+        echo "⚠️  Rustup installation failed. Trying mise..."
+        if command -v mise >/dev/null 2>&1; then
+            if mise use --global rust@latest; then
+                echo "✅ Rust installed via mise"
+            else
+                echo "❌ Failed to install Rust via mise"
+            fi
+        else
+            echo "❌ Rustup failed and mise is not available"
+        fi
     fi
 else
-    # Fallback to rustup if mise isn't available
-    install_if_missing "rustc" "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y" "Rust (via rustup)"
+    echo "✅ Rust (rustup) already installed"
+    # Ensure cargo is in path
+    [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+    rustup update
+fi
+
+# Install cargo-binstall for faster cargo installs
+if command -v cargo >/dev/null 2>&1; then
+    if ! command -v cargo-binstall >/dev/null 2>&1; then
+        echo "Installing cargo-binstall..."
+        curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+    else
+        echo "✅ cargo-binstall already installed"
+    fi
 fi
 
 # Install FZF with shell integrations
