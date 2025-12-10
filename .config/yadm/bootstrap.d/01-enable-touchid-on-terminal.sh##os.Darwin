@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Enable TouchID on shell
+# This allows using TouchID for sudo authentication
+
+echo "👆 Configuring TouchID for sudo..."
+
+if [[ -f /etc/pam.d/sudo ]]; then
+    if grep 'pam_tid.so' /etc/pam.d/sudo >/dev/null; then
+        echo "✅ TouchID already enabled for sudo"
+    else
+        echo "🔑 Enabling TouchID for sudo (requires password)..."
+        # Create a backup first
+        sudo cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
+        
+        # Prepend the auth line
+        echo -e "auth       sufficient     pam_tid.so\n$(cat /etc/pam.d/sudo)" | sudo tee /etc/pam.d/sudo >/dev/null
+        
+        if grep 'pam_tid.so' /etc/pam.d/sudo >/dev/null; then
+            echo "✅ TouchID enabled successfully"
+        else
+            echo "❌ Failed to enable TouchID"
+            # Restore backup
+            sudo mv /etc/pam.d/sudo.bak /etc/pam.d/sudo
+        fi
+    fi
+else
+    echo "⚠️  /etc/pam.d/sudo not found, skipping TouchID setup"
+fi

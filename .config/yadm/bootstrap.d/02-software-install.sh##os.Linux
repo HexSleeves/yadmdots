@@ -1,0 +1,66 @@
+#!/usr/bin/env sh
+
+if command -v debconf-set-selections >/dev/null; then
+  echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+fi
+
+# Setup Distribution installs
+echo "Installing Distribution Packages"
+echo $INSTALL_CMD
+sudo pacman -S --noconfirm base-devel gcc yq
+
+# Install packages
+yq '.packages[]' "$YAMD_PACKAGES/pacman.yaml" | xargs sudo pacman -S --needed --noconfirm
+
+if ! command -v brew >/dev/null; then
+  echo "Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Source Homebrew
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  echo "Homebrew is already installed."
+fi
+
+# Install mise if not already installed
+if ! command -v mise >/dev/null; then
+  echo "Installing mise..."
+  curl https://mise.jdx.dev/install.sh | sh
+else
+  echo "Mise is already installed."
+fi
+
+# Install Rust if not already installed
+if ! command -v cargo >/dev/null; then
+  echo "Installing Rust..."
+  curl https://sh.rustup.rs -sSf | sh -s -- -y
+else
+  echo "Rust is already installed."
+fi
+
+# Install Cursor
+if ! command -v cursor >/dev/null; then
+  echo "Installing Cursor..."
+  paru -S --noconfirm cursor-bin
+else
+  echo "Cursor is already installed."
+fi
+
+# Install WindSurf
+if ! command -v windsurf-next >/dev/null; then
+  echo "Installing WindSurf..."
+  paru -S --noconfirm windsurf-next
+else
+  echo "WindSurf is already installed."
+fi
+
+# install legcord
+if ! command -v legcord >/dev/null; then
+  echo "Installing legcord..."
+  #paru -S --noconfirm legcord-git
+else
+  echo "legcord is already installed."
+fi
+
+# UV
+curl -LsSf https://astral.sh/uv/install.sh | sh

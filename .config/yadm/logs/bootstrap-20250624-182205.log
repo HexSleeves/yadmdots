@@ -1,0 +1,399 @@
+YADM Bootstrap Started: Tue Jun 24 18:22:05 CDT 2025
+Platform: Darwin
+Architecture: arm64
+User: jacob.lecoq.ext
+YADM Class: 
+===============================================
+[2025-06-24 18:22:06] [INFO] Starting YADM bootstrap process
+[2025-06-24 18:22:06] [INFO] Found 13 bootstrap scripts to execute
+[2025-06-24 18:22:06] [INFO] Starting execution of 00-ensure-machine-class.sh
+[2025-06-24 18:22:16] [SUCCESS] Successfully completed 00-ensure-machine-class.sh
+--- Output from 00-ensure-machine-class.sh ---
+🔧 Machine class not configured. Please select your machine type:
+
+Available classes:
+  1) Personal - Personal development machine
+  2) Work     - Work/corporate machine
+
+Select machine class [1-2]: ✅ Machine class set to: Work
+
+📋 Class configuration applied:
+  - System updates will be skipped (managed by IT)
+  - Work-appropriate applications will be installed
+  - Work-specific configurations will be applied
+
+--- End output from 00-ensure-machine-class.sh ---
+[2025-06-24 18:22:16] [INFO] Starting execution of 01-enable-touchid-on-terminal.sh
+[2025-06-24 18:22:23] [SUCCESS] Successfully completed 01-enable-touchid-on-terminal.sh
+--- Output from 01-enable-touchid-on-terminal.sh ---
+auth       sufficient     pam_tid.so
+# sudo: auth account password session
+auth       include        sudo_local
+auth       sufficient     pam_smartcard.so
+auth       required       pam_opendirectory.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_permit.so
+--- End output from 01-enable-touchid-on-terminal.sh ---
+[2025-06-24 18:22:23] [INFO] Starting execution of 01-install-launch-agents.sh
+[2025-06-24 18:22:23] [SUCCESS] Successfully completed 01-install-launch-agents.sh
+--- Output from 01-install-launch-agents.sh ---
+--- End output from 01-install-launch-agents.sh ---
+[2025-06-24 18:22:23] [INFO] Starting execution of 01-install-launch-daemons.sh
+[2025-06-24 18:22:23] [SUCCESS] Successfully completed 01-install-launch-daemons.sh
+--- Output from 01-install-launch-daemons.sh ---
+--- End output from 01-install-launch-daemons.sh ---
+[2025-06-24 18:22:23] [INFO] Starting execution of 02-software-install.sh
+[2025-06-24 18:26:01] [SUCCESS] Successfully completed 02-software-install.sh
+--- Output from 02-software-install.sh ---
+✅ Git (Xcode Command Line Tools) already installed
+✅ Homebrew already installed
+Installing essential command-line tools...
+Installing GitHub CLI...
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/manifests/2.74.2
+==> Fetching gh
+==> Downloading https://ghcr.io/v2/homebrew/core/gh/blobs/sha256:d8d12facc23d7e2efdb21bc4eaa55058d8385609d1c8734685f406996074ff12
+==> Pouring gh--2.74.2.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/gh/2.74.2: 214 files, 35.8MB
+==> Running `brew cleanup gh`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed GitHub CLI
+✅ YADM (Yet Another Dotfiles Manager) already installed
+Installing bat...
+==> Downloading https://ghcr.io/v2/homebrew/core/bat/manifests/0.25.0_1
+==> Fetching dependencies for bat: ca-certificates, openssl@3, libssh2, libgit2 and oniguruma
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2025-05-20
+==> Fetching ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/blobs/sha256:dda1100e7f994081a593d6a5e422451bfa20037e29667ed2b79f011ffc9288a7
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/manifests/3.5.0
+==> Fetching openssl@3
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:7bbac0e84510570ec550deee1dce185569917378411263a9d1329ae395f52d70
+==> Downloading https://ghcr.io/v2/homebrew/core/libssh2/manifests/1.11.1
+==> Fetching libssh2
+==> Downloading https://ghcr.io/v2/homebrew/core/libssh2/blobs/sha256:4fd55e8973a9454001ac289972767ca8927f3639aa44715aa1e9ba81c3712245
+==> Downloading https://ghcr.io/v2/homebrew/core/libgit2/manifests/1.9.1
+==> Fetching libgit2
+==> Downloading https://ghcr.io/v2/homebrew/core/libgit2/blobs/sha256:3be60ae5bc7e68b788b021eaf00927f595c28bfed352cd5bf8c212494392dfb8
+==> Downloading https://ghcr.io/v2/homebrew/core/oniguruma/manifests/6.9.10
+==> Fetching oniguruma
+==> Downloading https://ghcr.io/v2/homebrew/core/oniguruma/blobs/sha256:7d6ab71fff646664b91e8ff91744696ec775357787dbc1a28e45d52759662e8d
+==> Fetching bat
+==> Downloading https://ghcr.io/v2/homebrew/core/bat/blobs/sha256:63e99dea5bc85d0e9c3c76c41c7324933d05b791c86cbdb47bf173bbb4f25afd
+==> Installing dependencies for bat: ca-certificates, openssl@3, libssh2, libgit2 and oniguruma
+==> Installing bat dependency: ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2025-05-20
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/bc18acc15e0abddc102f828b57a29cfdbec1b6b002db37ad12bad9dbf0e9d12f--ca-certificates-2025-05-20.bottle_manifest.json
+==> Pouring ca-certificates--2025-05-20.all.bottle.tar.gz
+[34m==>[0m [1mRegenerating CA certificate bundle from keychain, this may take a while...[0m
+🍺  /opt/homebrew/Cellar/ca-certificates/2025-05-20: 4 files, 225.8KB
+==> Installing bat dependency: openssl@3
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/manifests/3.5.0
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/d3c8243df37f69247721b1d8a6c51e1a8afd6664b832423921ffd99bb2bb381a--openssl@3-3.5.0.bottle_manifest.json
+==> Pouring openssl@3--3.5.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openssl@3/3.5.0: 7,563 files, 35.4MB
+==> Installing bat dependency: libssh2
+==> Downloading https://ghcr.io/v2/homebrew/core/libssh2/manifests/1.11.1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/6d2495eb2b5f37f7931b23940ceb29db14a4742a49d1d8cce26964ad91a03f26--libssh2-1.11.1.bottle_manifest.json
+==> Pouring libssh2--1.11.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libssh2/1.11.1: 201 files, 1.2MB
+==> Installing bat dependency: libgit2
+==> Downloading https://ghcr.io/v2/homebrew/core/libgit2/manifests/1.9.1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/6e665b2e520a25929d0347f220fed4c93744ac835372978af6abeedcbe0017eb--libgit2-1.9.1.bottle_manifest.json
+==> Pouring libgit2--1.9.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libgit2/1.9.1: 109 files, 4.9MB
+==> Installing bat dependency: oniguruma
+==> Downloading https://ghcr.io/v2/homebrew/core/oniguruma/manifests/6.9.10
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/04e9c35970e8b4c6db751bdaa577e7185a85d364ccc66e079983f524aab95a85--oniguruma-6.9.10.bottle_manifest.json
+==> Pouring oniguruma--6.9.10.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/oniguruma/6.9.10: 15 files, 1.5MB
+==> Installing bat
+==> Pouring bat--0.25.0_1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/bat/0.25.0_1: 15 files, 4.4MB
+==> Running `brew cleanup bat`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed bat
+✅ curl already installed
+Installing eza...
+==> Downloading https://ghcr.io/v2/homebrew/core/eza/manifests/0.21.5
+==> Fetching eza
+==> Downloading https://ghcr.io/v2/homebrew/core/eza/blobs/sha256:bd079aaaaac26c8d96b7f7e26f3b1279e15dc5571ae7b3cd8eae836dd8483af9
+==> Pouring eza--0.21.5.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/eza/0.21.5: 15 files, 1.3MB
+==> Running `brew cleanup eza`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed eza
+Installing fd...
+==> Downloading https://ghcr.io/v2/homebrew/core/fd/manifests/10.2.0-2
+==> Fetching fd
+==> Downloading https://ghcr.io/v2/homebrew/core/fd/blobs/sha256:288860909de7a2e91ce05b6bd85f7e460ab8826817a1656fafd990d607e3d459
+==> Pouring fd--10.2.0.arm64_sequoia.bottle.2.tar.gz
+🍺  /opt/homebrew/Cellar/fd/10.2.0: 15 files, 2.8MB
+==> Running `brew cleanup fd`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed fd
+Installing fzf...
+==> Downloading https://ghcr.io/v2/homebrew/core/fzf/manifests/0.62.0
+==> Fetching fzf
+==> Downloading https://ghcr.io/v2/homebrew/core/fzf/blobs/sha256:af76ab424bb56e5a9db035553cf5ebbb3f3949ace449ac5e8353dbe9776c2336
+==> Pouring fzf--0.62.0.arm64_sequoia.bottle.tar.gz
+==> Caveats
+To set up shell integration, see:
+  https://github.com/junegunn/fzf#setting-up-shell-integration
+To use fzf in Vim, add the following line to your .vimrc:
+  set rtp+=/opt/homebrew/opt/fzf
+==> Summary
+🍺  /opt/homebrew/Cellar/fzf/0.62.0: 19 files, 4.4MB
+==> Running `brew cleanup fzf`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+✅ Successfully installed fzf
+Installing git-delta...
+==> Downloading https://ghcr.io/v2/homebrew/core/git-delta/manifests/0.18.2_3
+==> Fetching git-delta
+==> Downloading https://ghcr.io/v2/homebrew/core/git-delta/blobs/sha256:7c27a32de04509f9a25338f7cc4bafb70afd00f7cbea5da8c204a71c0f2a732b
+==> Pouring git-delta--0.18.2_3.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/git-delta/0.18.2_3: 11 files, 6.2MB
+==> Running `brew cleanup git-delta`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed git-delta
+✅ git already installed
+Installing htop...
+==> Downloading https://ghcr.io/v2/homebrew/core/htop/manifests/3.4.1
+==> Fetching htop
+==> Downloading https://ghcr.io/v2/homebrew/core/htop/blobs/sha256:275705af5f32669121f09010359ed54a913cd25c268cde4956753da6d3ed73c9
+==> Pouring htop--3.4.1.arm64_sequoia.bottle.tar.gz
+==> Caveats
+htop requires root privileges to correctly display all running processes,
+so you will need to run `sudo htop`.
+You should be certain that you trust any software you grant root privileges.
+==> Summary
+🍺  /opt/homebrew/Cellar/htop/3.4.1: 13 files, 380KB
+==> Running `brew cleanup htop`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+✅ Successfully installed htop
+✅ jq already installed
+Installing ripgrep...
+==> Downloading https://ghcr.io/v2/homebrew/core/ripgrep/manifests/14.1.1
+==> Fetching ripgrep
+==> Downloading https://ghcr.io/v2/homebrew/core/ripgrep/blobs/sha256:b8bf5e73c9c9b441de067ec86ac167b071ecc2078dcb1d89d2cebbb151feab35
+==> Pouring ripgrep--14.1.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/ripgrep/14.1.1: 14 files, 6MB
+==> Running `brew cleanup ripgrep`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed ripgrep
+Installing tree...
+==> Downloading https://ghcr.io/v2/homebrew/core/tree/manifests/2.2.1
+==> Fetching tree
+==> Downloading https://ghcr.io/v2/homebrew/core/tree/blobs/sha256:ccfac896234e1c63841b421873387c407f375af7e6db54abea549d24e3c69589
+==> Pouring tree--2.2.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/tree/2.2.1: 9 files, 187.7KB
+==> Running `brew cleanup tree`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+✅ Successfully installed tree
+Installing wget...
+==> Downloading https://ghcr.io/v2/homebrew/core/wget/manifests/1.25.0
+==> Fetching dependencies for wget: libidn2
+==> Downloading https://ghcr.io/v2/homebrew/core/libidn2/manifests/2.3.8
+==> Fetching libidn2
+==> Downloading https://ghcr.io/v2/homebrew/core/libidn2/blobs/sha256:1eb02bfa40ec00b7ea64d8608fcf2115069d99de5a35eb3e2b3ac444a695ea46
+==> Fetching wget
+==> Downloading https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:a93dd95c5d63036e026b526e000d33fae7fb44d9a8fda5afc89bff112438c6b3
+==> Installing dependencies for wget: libidn2
+==> Installing wget dependency: libidn2
+==> Downloading https://ghcr.io/v2/homebrew/core/libidn2/manifests/2.3.8
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/f30f50fbde4bff9a71de54d684e482d7da3432656d680b97441163c6e5665468--libidn2-2.3.8.bottle_manifest.json
+==> Pouring libidn2--2.3.8.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libidn2/2.3.8: 80 files, 929.5KB
+==> Installing wget
+==> Pouring wget--1.25.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/wget/1.25.0: 92 files, 4.5MB
+==> Running `brew cleanup wget`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+✅ Successfully installed wget
+Installing yq...
+==> Downloading https://ghcr.io/v2/homebrew/core/yq/manifests/4.45.4
+==> Fetching yq
+==> Downloading https://ghcr.io/v2/homebrew/core/yq/blobs/sha256:2e67a801ebd410bb0183ae6bd5ce47963b910da7cb3fc77b0b6b1ff59c67a2d7
+==> Pouring yq--4.45.4.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/yq/4.45.4: 10 files, 10.7MB
+==> Running `brew cleanup yq`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+✅ Successfully installed yq
+Installing GUI applications...
+Installing google-chrome...
+==> Downloading https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
+==> Installing Cask google-chrome
+Error: It seems there is already an App at '/Applications/Google Chrome.app'.
+==> Purging files for version 138.0.7204.50 of Cask google-chrome
+❌ Failed to install google-chrome
+Installing warp...
+==> Downloading https://app.warp.dev/download/brew?version=v0.2025.06.20.22.47.stable_05
+==> Downloading from https://releases.warp.dev/stable/v0.2025.06.20.22.47.stable_05/Warp.dmg
+==> Installing Cask warp
+Error: It seems there is already an App at '/Applications/Warp.app'.
+==> Purging files for version 0.2025.06.20.22.47.stable_05 of Cask warp
+❌ Failed to install warp
+Installing additional useful applications...
+Installing bitwarden...
+==> Downloading https://github.com/bitwarden/clients/releases/download/desktop-v2025.5.1/Bitwarden-2025.5.1-universal.dmg
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/53538899/fad94d5d-9d0b-43cb-9cf2-ff48e7907441?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250624%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250624T232425Z&X-Amz-Expires=1800&X-Amz-Signature=c6c9d953efdee49011c6131a5d964b40691342631b4f9101cbee48a8ec9fdc10&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DBitwarden-2025.5.1-universal.dmg&response-content-type=application%2Foctet-stream
+==> Installing Cask bitwarden
+==> Moving App 'Bitwarden.app' to '/Applications/Bitwarden.app'
+🍺  bitwarden was successfully installed!
+✅ Successfully installed bitwarden
+Installing rectangle...
+==> Downloading https://github.com/rxhanson/Rectangle/releases/download/v0.88/Rectangle0.88.dmg
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/193162629/2ba1e25a-10de-4d9e-b19d-783ff88b9e6a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250624%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250624T232440Z&X-Amz-Expires=1800&X-Amz-Signature=913a7c393262ec696215e98e58b2b892df4183a7cb701e0a01e857a03b2dd02f&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DRectangle0.88.dmg&response-content-type=application%2Foctet-stream
+==> Installing Cask rectangle
+==> Moving App 'Rectangle.app' to '/Applications/Rectangle.app'
+🍺  rectangle was successfully installed!
+✅ Successfully installed rectangle
+Installing raycast...
+==> Downloading https://releases.raycast.com/releases/1.100.3/download?build=arm
+==> Downloading from https://raycast-releases.9a8adc978cc22e82f2df4dd5f45c4ef2.r2.cloudflarestorage.com/Raycast_v1.100.3_090cfe28476b890a6e5e46609f274e4fde1ca3b0_arm.dmg?response-content-disposition=attachment%3B%20filename%3D%22Raycast.dmg%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=b3c053179dd07241f8271dbe9002b57e%2F20250624%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250624T232448Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=55571e75fdad364d151d42dba90538e111c0f332c8c11eec4677657892a2862f
+==> Installing Cask raycast
+==> Purging files for version 1.100.3 of Cask raycast
+⚠️  Skipped raycast (may not be available or already installed via other means)
+Installing cleanmymac...
+==> Downloading https://dl.devmate.com/com.macpaw.CleanMyMac5/50100.0.2506111510/1749711416/CleanMyMac5-50100.0.2506111510.zip
+==> Installing Cask cleanmymac
+==> Moving App 'CleanMyMac_5.app' to '/Applications/CleanMyMac.app'
+🍺  cleanmymac was successfully installed!
+✅ Successfully installed cleanmymac
+Installing spotify...
+==> Downloading https://download.scdn.co/SpotifyARM64.dmg
+==> Installing Cask spotify
+==> Moving App 'Spotify.app' to '/Applications/Spotify.app'
+🍺  spotify was successfully installed!
+✅ Successfully installed spotify
+✅ mise (version manager) already installed
+Installing/updating Rust via mise...
+mise rust@1.87.0     install
+mise rust@1.87.0     Downloading rustup-init
+info: downloading installer
+info: profile set to 'default'
+info: default host triple is aarch64-apple-darwin
+info: skipping toolchain installation
+mise rust@1.87.0     Rust is installed now. Great!
+mise rust@1.87.0     To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH
+mise rust@1.87.0     environment variable. This has not been done automatically.
+mise rust@1.87.0     To configure your current shell, you need to source
+mise rust@1.87.0     the corresponding env file under $HOME/.cargo.
+mise rust@1.87.0     This is usually done by running one of the following (note the leading DOT):
+mise rust@1.87.0     . "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
+mise rust@1.87.0     source "$HOME/.cargo/env.fish"  # For fish
+mise rust@1.87.0     source $"($nu.home-path)/.cargo/env.nu"  # For nushell
+info: syncing channel updates for '1.87.0-aarch64-apple-darwin'
+info: latest update on 2025-05-15, rust version 1.87.0 (17067e9ac 2025-05-09)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+info: installing component 'rust-std'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+mise rust@1.87.0       1.87.0-aarch64-apple-darwin installed - rustc 1.87.0 (17067e9ac 2025-05-09)
+info: default toolchain set to '1.87.0-aarch64-apple-darwin'
+info: checking for self-update
+mise rust@1.87.0     rustc -V
+mise rust@1.87.0     rustc 1.87.0 (17067e9ac 2025-05-09)
+mise rust@1.87.0   ✓ installed
+mise ~/.config/mise/config.toml tools: rust@1.87.0
+✅ Rust installed via mise
+mise cargo-binstall@1.14.1 install
+mise cargo-binstall@1.14.1 download cargo-binstall-aarch64-apple-darwin.zip
+mise cargo-binstall@1.14.1 extract cargo-binstall-aarch64-apple-darwin.zip
+mise cargo-binstall@1.14.1 ✓ installed
+mise ~/.config/mise/config.toml tools: cargo-binstall@1.14.1
+✅ cargo-binstall installed
+Setting up FZF shell integrations...
+Downloading bin/fzf ...
+  - Already exists
+  - Checking fzf executable ... 0.62.0
+
+Generate /Users/jacob.lecoq.ext/.fzf.bash ... OK
+Generate /Users/jacob.lecoq.ext/.fzf.zsh ... OK
+
+Update /Users/jacob.lecoq.ext/.bashrc:
+  - [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+    ~ Skipped
+
+Update /Users/jacob.lecoq.ext/.zshrc:
+  - [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    ~ Skipped
+
+For more information, see: https://github.com/junegunn/fzf
+✅ FZF shell integrations installed
+Updating Homebrew and cleaning up...
+==> Updating Homebrew...
+Already up-to-date.
+🎉 Core software installation completed!
+📝 Installed applications should now be available in Applications folder and command line tools in PATH
+--- End output from 02-software-install.sh ---
+[2025-06-24 18:26:01] [INFO] Starting execution of 03-clone-repositories.sh
+[2025-06-24 18:26:05] [ERROR] Failed to execute 03-clone-repositories.sh (exit code: 128)
+--- Error output from 03-clone-repositories.sh ---
+Init submodules
+Submodule '/home/lecoqjacob/.config/astronvim' (git@github.com:bayou-brogrammer/nvim-astro.git) registered for path '.config/astronvim'
+Submodule '.config/nvim' (https://github.com/bayou-brogrammer/nvim.git) registered for path '.config/nvim'
+Submodule '.config/zsh' (https://github.com/bayou-brogrammer/zdotdir.git) registered for path '.config/zsh'
+Cloning into '/Users/jacob.lecoq.ext/.config/astronvim'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: clone of 'git@github.com:bayou-brogrammer/nvim-astro.git' into submodule path '/Users/jacob.lecoq.ext/.config/astronvim' failed
+Failed to clone '.config/astronvim'. Retry scheduled
+Cloning into '/Users/jacob.lecoq.ext/.config/nvim'...
+Cloning into '/Users/jacob.lecoq.ext/.config/zsh'...
+Cloning into '/Users/jacob.lecoq.ext/.config/astronvim'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+fatal: clone of 'git@github.com:bayou-brogrammer/nvim-astro.git' into submodule path '/Users/jacob.lecoq.ext/.config/astronvim' failed
+Failed to clone '.config/astronvim' a second time, aborting
+Updating the zdotdir repo origin URL
+Updating the nvim repo origin URL
+Updating the astronvim repo origin URL
+fatal: not a git repository (or any of the parent directories): .git
+--- End error output from 03-clone-repositories.sh ---
+[2025-06-24 18:27:46] [WARN] Skipping 03-clone-repositories.sh

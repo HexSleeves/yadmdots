@@ -1,0 +1,1 @@
+06-disable-spotlight-indexing.sh##os.Darwin

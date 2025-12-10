@@ -1,0 +1,253 @@
+YADM Bootstrap Started: Tue Jun 24 18:32:02 CDT 2025
+Platform: Darwin
+Architecture: arm64
+User: jacob.lecoq.ext
+YADM Class: Work
+===============================================
+[2025-06-24 18:32:03] [INFO] Starting YADM bootstrap process
+[2025-06-24 18:32:03] [INFO] Found 13 bootstrap scripts to execute
+[2025-06-24 18:32:03] [INFO] Starting execution of 00-ensure-machine-class.sh
+[2025-06-24 18:32:04] [SUCCESS] Successfully completed 00-ensure-machine-class.sh
+--- Output from 00-ensure-machine-class.sh ---
+✅ Machine class already set to: Work
+--- End output from 00-ensure-machine-class.sh ---
+[2025-06-24 18:32:04] [INFO] Starting execution of 01-enable-touchid-on-terminal.sh
+[2025-06-24 18:32:04] [SUCCESS] Successfully completed 01-enable-touchid-on-terminal.sh
+--- Output from 01-enable-touchid-on-terminal.sh ---
+--- End output from 01-enable-touchid-on-terminal.sh ---
+[2025-06-24 18:32:04] [INFO] Starting execution of 01-install-launch-agents.sh
+[2025-06-24 18:32:04] [SUCCESS] Successfully completed 01-install-launch-agents.sh
+--- Output from 01-install-launch-agents.sh ---
+--- End output from 01-install-launch-agents.sh ---
+[2025-06-24 18:32:04] [INFO] Starting execution of 01-install-launch-daemons.sh
+[2025-06-24 18:32:16] [SUCCESS] Successfully completed 01-install-launch-daemons.sh
+--- Output from 01-install-launch-daemons.sh ---
+--- End output from 01-install-launch-daemons.sh ---
+[2025-06-24 18:32:16] [INFO] Starting execution of 02-software-install.sh
+[2025-06-24 18:33:04] [SUCCESS] Successfully completed 02-software-install.sh
+--- Output from 02-software-install.sh ---
+✅ Git (Xcode Command Line Tools) already installed
+✅ Homebrew already installed
+Installing essential command-line tools...
+✅ GitHub CLI already installed
+✅ YADM (Yet Another Dotfiles Manager) already installed
+✅ bat already installed
+✅ curl already installed
+✅ eza already installed
+✅ fd already installed
+✅ fzf already installed
+Installing git-delta...
+Warning: git-delta 0.18.2_3 is already installed and up-to-date.
+To reinstall 0.18.2_3, run:
+  brew reinstall git-delta
+✅ Successfully installed git-delta
+✅ git already installed
+✅ htop already installed
+✅ jq already installed
+Installing ripgrep...
+Warning: ripgrep 14.1.1 is already installed and up-to-date.
+To reinstall 14.1.1, run:
+  brew reinstall ripgrep
+✅ Successfully installed ripgrep
+✅ tree already installed
+✅ wget already installed
+✅ yq already installed
+Installing GUI applications...
+Installing google-chrome...
+==> Downloading https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/88881e66883c4776fff9b3019b48a26795020439a33ddbedd3bd4620283aecd2--googlechrome.dmg
+==> Installing Cask google-chrome
+Error: It seems there is already an App at '/Applications/Google Chrome.app'.
+==> Purging files for version 138.0.7204.50 of Cask google-chrome
+❌ Failed to install google-chrome
+Installing warp...
+==> Downloading https://app.warp.dev/download/brew?version=v0.2025.06.20.22.47.stable_05
+==> Downloading from https://releases.warp.dev/stable/v0.2025.06.20.22.47.stable_05/Warp.dmg
+==> Installing Cask warp
+Error: It seems there is already an App at '/Applications/Warp.app'.
+==> Purging files for version 0.2025.06.20.22.47.stable_05 of Cask warp
+❌ Failed to install warp
+Installing additional useful applications...
+✅ bitwarden already installed
+✅ rectangle already installed
+Installing raycast...
+==> Downloading https://releases.raycast.com/releases/1.100.3/download?build=arm
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/91b42dc0e63fef2c0e577f036439dc820374f6dd50759383e51bd535ee600f1b--Raycast.dmg
+==> Installing Cask raycast
+==> Purging files for version 1.100.3 of Cask raycast
+⚠️  Skipped raycast (may not be available or already installed via other means)
+✅ cleanmymac already installed
+✅ spotify already installed
+✅ mise (version manager) already installed
+Installing/updating Rust via mise...
+mise ~/.config/mise/config.toml tools: rust@1.87.0
+✅ Rust installed via mise
+mise ~/.config/mise/config.toml tools: cargo-binstall@1.14.1
+✅ cargo-binstall installed
+✅ FZF shell integrations already configured
+Updating Homebrew and cleaning up...
+==> Updating Homebrew...
+Already up-to-date.
+🎉 Core software installation completed!
+📝 Installed applications should now be available in Applications folder and command line tools in PATH
+--- End output from 02-software-install.sh ---
+[2025-06-24 18:33:04] [INFO] Starting execution of 03-clone-repositories.sh
+[2025-06-24 18:33:04] [SUCCESS] Successfully completed 03-clone-repositories.sh
+--- Output from 03-clone-repositories.sh ---
+Init submodules
+Updating the zdotdir repo origin URL
+Updating the nvim repo origin URL
+Updating the astronvim repo origin URL
+--- End output from 03-clone-repositories.sh ---
+[2025-06-24 18:33:04] [INFO] Starting execution of 04-setup-gpg.sh
+[2025-06-24 18:33:06] [SUCCESS] Successfully completed 04-setup-gpg.sh
+--- Output from 04-setup-gpg.sh ---
+Setting up gpg keys...
+Warning: gnupg 2.4.8 is already installed and up-to-date.
+To reinstall 2.4.8, run:
+  brew reinstall gnupg
+gpg: AES256.CFB encrypted data
+gpg: encrypted with 1 passphrase
+x .local/share/gnupg/.exported-keyring/75514B13ECEAA46F3FBADF5333EC7B08ED47E6E3.asc
+x .local/share/gnupg/.exported-keyring/ownertrust.txt
+x .local/share/gnupg/.exported-keyring/private-key.asc
+x .ssh/id_ed25519
+x .ssh/id_ed25519.pub
+All files decrypted.
+gpg: key 33EC7B08ED47E6E3: "Jacob LeCoq <lecoqjacob@gmail.com>" not changed
+gpg: key 33EC7B08ED47E6E3: "Jacob LeCoq <lecoqjacob@gmail.com>" not changed
+gpg: key 33EC7B08ED47E6E3: secret key imported
+gpg: Total number processed: 2
+gpg:              unchanged: 2
+gpg:       secret keys read: 1
+gpg:  secret keys unchanged: 1
+--- End output from 04-setup-gpg.sh ---
+[2025-06-24 18:33:06] [INFO] Starting execution of 05-allow-ssh-in-firewall.sh
+[2025-06-24 18:33:36] [SUCCESS] Successfully completed 05-allow-ssh-in-firewall.sh
+--- Output from 05-allow-ssh-in-firewall.sh ---
+Firewall settings cannot be modified from command line on managed Mac computers.
+--- End output from 05-allow-ssh-in-firewall.sh ---
+[2025-06-24 18:33:36] [INFO] Starting execution of 06-disable-spotlight-indexing.sh
+[2025-06-24 18:33:37] [SUCCESS] Successfully completed 06-disable-spotlight-indexing.sh
+--- Output from 06-disable-spotlight-indexing.sh ---
+--- End output from 06-disable-spotlight-indexing.sh ---
+[2025-06-24 18:33:37] [INFO] Starting execution of 10-install-mise-plugins.sh
+[2025-06-24 18:47:28] [SUCCESS] Successfully completed 10-install-mise-plugins.sh
+--- Output from 10-install-mise-plugins.sh ---
+🔧 Installing and configuring development tools via mise...
+📦 Installing mise tools...
+📋 Installing core development tools...
+Installing node@lts...
+mise ~/.config/mise/config.toml tools: node@22.16.0
+✅ Successfully installed node@lts
+Installing bun@latest...
+mise ~/.config/mise/config.toml tools: bun@1.2.17
+✅ Successfully installed bun@latest
+Installing python@latest...
+mise ~/.config/mise/config.toml tools: python@3.13.5
+✅ Successfully installed python@latest
+Installing deno@latest...
+mise ~/.config/mise/config.toml tools: deno@2.3.6
+✅ Successfully installed deno@latest
+Installing golang@latest...
+mise ~/.config/mise/config.toml tools: go@1.24.4
+✅ Successfully installed golang@latest
+
+🤔 Would you like to install optional development tools?
+Install optional tools? [y/N]: 
+🔧 Select optional mise tools to install:
+   Enter the numbers of tools you want (e.g., 1 3 5) or 'all' for everything:
+
+    1) lua                  - Lightweight scripting language
+    2) rust                 - Systems programming language
+
+Select tools (numbers separated by spaces, or 'all', or 'none'): ⚠️  Invalid selection: n (ignored)
+⏭️  No valid optional mise tools selected
+
+🤔 Would you like to install useful Rust tools?
+Install cargo tools? [y/N]: 
+🤔 Would you like to install useful global npm packages?
+Install npm tools? [y/N]: 🔄 Updating all mise installations...
+mise neovim@0.11.2   install
+mise neovim@0.11.2   download nvim-macos-arm64.tar.gz
+mise neovim@0.11.2   checksum nvim-macos-arm64.tar.gz
+mise neovim@0.11.2   extract nvim-macos-arm64.tar.gz
+mise neovim@0.11.2 ✓ installed
+mise yamlfmt@0.17.2  install
+mise yamlfmt@0.17.2  download yamlfmt_0.17.2_Darwin_arm64.tar.gz
+mise WARN  aqua:google/yamlfmt@0.17.2 can be verified with cosign but cosign is not installed
+mise yamlfmt@0.17.2  checksum yamlfmt_0.17.2_Darwin_arm64.tar.gz
+mise yamlfmt@0.17.2  extract yamlfmt_0.17.2_Darwin_arm64.tar.gz
+mise yamlfmt@0.17.2 ✓ installed
+
+📋 Currently installed mise tools:
+bun             1.2.17            ~/.config/mise/config.toml  latest
+cargo-binstall  1.14.1            ~/.config/mise/config.toml  latest
+deno            2.3.6             ~/.config/mise/config.toml  latest
+go              1.24.4            ~/.config/mise/config.toml  latest
+neovim          0.11.2            ~/.config/mise/config.toml  latest
+node            22.16.0           ~/.config/mise/config.toml  lts
+python          3.13.5            ~/.config/mise/config.toml  latest
+rust            1.87.0 (symlink)  ~/.config/mise/config.toml  latest
+yamlfmt         0.17.2            ~/.config/mise/config.toml  latest
+
+🎉 Mise development tools setup completed!
+💡 Tip: Use 'mise use <tool>@<version>' to add tools to your project
+💡 Tip: Use 'mise list-all <tool>' to see available versions for a tool
+--- End output from 10-install-mise-plugins.sh ---
+[2025-06-24 18:47:28] [INFO] Starting execution of 30-set-defaults.sh
+[2025-06-24 18:47:42] [SUCCESS] Successfully completed 30-set-defaults.sh
+--- Output from 30-set-defaults.sh ---
+--- End output from 30-set-defaults.sh ---
+[2025-06-24 18:47:42] [INFO] Starting execution of 99-restore-mackup.sh
+[2025-06-24 18:48:10] [ERROR] Failed to execute 99-restore-mackup.sh (exit code: 1)
+--- Error output from 99-restore-mackup.sh ---
+⚠️  Mackup not installed. Installing via Homebrew...
+==> Downloading https://ghcr.io/v2/homebrew/core/mackup/manifests/0.8.43
+==> Fetching dependencies for mackup: mpdecimal, sqlite, xz and python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/manifests/4.0.1
+==> Fetching mpdecimal
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/blobs/sha256:e21da583e42e86d5a2f0aedfaf7820e51b8af3065da599cff179d1a39903f3ab
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.50.1
+==> Fetching sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:13d6403cd7df65d989386b2ccd59108056dda577b90104b479ecbcdeb6d867bb
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.8.1
+==> Fetching xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:dcd7823f2624cbcd08f55c232097a79300c7d76ab5969004db1a4785c6c0cd87
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3.13.5-1
+==> Fetching python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/blobs/sha256:7bd6e87235b8bf2d4cf4835a5ddbd49cc7cee08d14ab2465ef24c34290a63a8e
+==> Fetching mackup
+==> Downloading https://ghcr.io/v2/homebrew/core/mackup/blobs/sha256:f0d80fa9efb59208a386293d95384f3440291ba11121fc43dd4c69707b515fce
+==> Installing dependencies for mackup: mpdecimal, sqlite, xz and python@3.13
+==> Installing mackup dependency: mpdecimal
+==> Downloading https://ghcr.io/v2/homebrew/core/mpdecimal/manifests/4.0.1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/dbbf60721dc54b6215f6c0988496331d4110a2a358da867a1129cd84b8166b31--mpdecimal-4.0.1.bottle_manifest.json
+==> Pouring mpdecimal--4.0.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mpdecimal/4.0.1: 22 files, 645.6KB
+==> Installing mackup dependency: sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.50.1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/a40fe78724db12f47a20638d2ac82e7057f6f1f425ea185cb180dd97df08cb2e--sqlite-3.50.1.bottle_manifest.json
+==> Pouring sqlite--3.50.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sqlite/3.50.1: 13 files, 4.9MB
+==> Installing mackup dependency: xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.8.1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/86a115cc1d43ff8a480fd907f812e70a403e1675d8a7223f61bbb08cbd2adc27--xz-5.8.1.bottle_manifest.json
+==> Pouring xz--5.8.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.8.1: 96 files, 2.5MB
+==> Installing mackup dependency: python@3.13
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.13/manifests/3.13.5-1
+Already downloaded: /Users/jacob.lecoq.ext/Library/Caches/Homebrew/downloads/6f054ddb0b7ceefefd45be898b4aee4dd0b8e38c8e43c6d5370347f18bf28259--python@3.13-3.13.5-1.bottle_manifest.json
+==> Pouring python@3.13--3.13.5.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/python@3.13/3.13.5: 3,605 files, 66.9MB
+==> Installing mackup
+==> Pouring mackup--0.8.43.all.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mackup/0.8.43: 613 files, 342.5KB
+==> Running `brew cleanup mackup`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+📋 Creating basic mackup configuration...
+/Users/jacob.lecoq.ext/.config/yadm/bootstrap.d/99-restore-mackup.sh: line 22: /Users/jacob.lecoq.ext/.mackup.cfg: No such file or directory
+--- End error output from 99-restore-mackup.sh ---
+[2025-06-24 18:48:15] [ERROR] Bootstrap aborted by user
+[2025-06-24 18:48:15] [ERROR] Bootstrap process aborted
