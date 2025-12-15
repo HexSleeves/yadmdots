@@ -537,5 +537,10 @@
     "!**/vendor",
     "!**/*.mdc"
   ],
-  "geminicodeassist.project": "citric-thought-vrqlm"
+  "geminicodeassist.project": "citric-thought-vrqlm",
+  "sonarlint.automaticAnalysis": true,
+  "sonarlint.focusOnNewCode": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  }
 }

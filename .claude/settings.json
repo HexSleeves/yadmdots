@@ -55,17 +55,19 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "feature-dev@claude-code-plugins": false,
-    "pr-review-toolkit@claude-code-plugins": false,
+    "feature-dev@claude-code-plugins": true,
+    "pr-review-toolkit@claude-code-plugins": true,
     "commit-commands@claude-code-plugins": false,
-    "backend-development@claude-code-workflows": false,
+    "backend-development@claude-code-workflows": true,
     "code-review-ai@claude-code-workflows": false,
     "error-diagnostics@claude-code-workflows": false,
     "application-performance@claude-code-workflows": false,
-    "javascript-typescript@claude-code-workflows": false,
+    "javascript-typescript@claude-code-workflows": true,
     "compounding-engineering@every-marketplace": true,
     "context-management@claude-code-workflows": true,
     "claude-opus-4-5-migration@claude-code-plugins": true,
-    "performance-optimizer@claude-code-templates": true
+    "performance-optimizer@claude-code-templates": true,
+    "code-refactoring@claude-code-workflows": true,
+    "compound-engineering@every-marketplace": true
   }
 }
