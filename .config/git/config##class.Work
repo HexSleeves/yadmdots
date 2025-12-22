@@ -1,0 +1,21 @@
+# vim: syntax=gitconfig
+
+[user]
+  name       = "Jacob L"
+  email      = "lecoqjacob@gmail.com"
+  signingkey = 75514B13ECEAA46F3FBADF5333EC7B08ED47E6E3
+
+[include]
+  path = ~/.config/git/config.local
+[include]
+  path = "~/.config/git/themes.gitconfig"
+
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[credential]
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

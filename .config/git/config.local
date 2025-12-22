@@ -1,0 +1,116 @@
+[core]
+pager = delta
+editor = nvim
+
+[color]
+ui = true
+diff = true
+status = true
+branch = true
+showbranch = true
+
+[alias]
+a = commit --amend
+an = commit --amend --no-edit
+allfiles = "!f() { git log --name-only --diff-filter=A --pretty=format: | sort -u; }; f"
+cfg = config --list
+changedfiles = "diff-tree --no-commit-id -r --name-only"
+cam = commit -am
+cm = commit -m
+co = checkout
+cob = checkout -b
+discard = reset HEAD --hard
+discardchunk = checkout -p
+fap = fetch --all --prune
+lol = log --graph --decorate --pretty=oneline --abbrev-commit
+lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+ol = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+others = "ls-files --others --ignored --exclude-from=.gitignore"
+pr = "!f() { git fetch --force origin pull/$1/head:pr-$1; }; f"
+review = "!f() { git log -p --reverse \"$@\" origin/master...HEAD; }; f"
+rmuntracked = clean -df
+root = rev-parse --show-toplevel
+s = status
+searchfiles = "log --name-status --source --all -S" 
+searchtext = "!f() { git grep \"$*\" $(git rev-list --all); }; f"
+uncommit = reset --soft HEAD^
+unstage = reset HEAD --
+wip = "!f() { git add . && git commit -m 'Work in progress'; }; f"
+
+################################################################################################################
+# Actions
+################################################################################################################
+
+[commit]
+gpgsign = true
+
+[diff]
+colorMoved = default
+
+[difftool]
+prompt = false
+
+[difftool "difftastic"]
+cmd = difft "$LOCAL" "$REMOTE"
+
+[hub]
+protocol = ssh
+
+[init]
+defaultBranch = main
+
+[interactive]
+diffFilter = delta --color-only --features=interactive --true-color=always
+
+[merge]
+tool = vscode
+conflictstyle = zdiff3
+
+[mergetool "vscode"]
+cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[pull]
+rebase = true
+
+[push]
+autoSetupRemote = true
+
+[rebase]
+autoStash = true
+
+################################################################################################################
+# Plugins
+################################################################################################################
+
+[delta]
+light = false
+navigate = true
+hyperlinks = true
+side-by-side = true
+line-numbers = true
+features = "mantis-shrimp"
+whitespace-error-style = 22 reverse
+hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+
+[delta "interactive"]
+keep-plus-minus-markers = false
+
+[delta "decorations"]
+commit-decoration-style = blue ol
+commit-style = raw
+file-style = omit
+hunk-header-decoration-style = blue box
+hunk-header-file-style = red
+hunk-header-line-number-style = "#067a00"
+hunk-header-style = file line-number syntax
+
+################################################################################################################
+# Miscellaneous
+################################################################################################################
+
+[filter "lfs"]
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+

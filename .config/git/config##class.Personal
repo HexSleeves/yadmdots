@@ -1,0 +1,9 @@
+# vim: syntax=gitconfig
+
+[user]
+  name       = "Jacob L"
+  email      = "lecoqjacob@gmail.com"
+  signingkey = 75514B13ECEAA46F3FBADF5333EC7B08ED47E6E3
+
+[include]
+    path = ~/.config/git/config.local
