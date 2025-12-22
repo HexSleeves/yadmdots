@@ -1,1 +1,0 @@
-/Users/jacob.lecoq.ext/.config/yadm/bootstrap.d/99-restore-mackup.sh

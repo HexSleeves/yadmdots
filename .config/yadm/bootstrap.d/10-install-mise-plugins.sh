@@ -43,7 +43,7 @@ install_mise_tool "bun" "latest"
 # --- Personal Profile Extras ---
 if [[ "$class" == "Personal" ]]; then
     echo "🚀 Installing Personal profile extras..."
-    
+
     if ! command -v rustc >/dev/null 2>&1; then
         install_mise_tool "rust" "latest"
     else
@@ -56,7 +56,7 @@ if [[ "$class" == "Personal" ]]; then
         echo "🦀 Installing Cargo tools..."
         # List of tools to install via cargo
         cargo_tools=("bat" "ripgrep" "fd-find" "eza" "zoxide" "starship" "bottom" "tokei")
-        
+
         # Check if cargo-binstall is available (it should be from core install or manual)
         if ! command -v cargo-binstall >/dev/null 2>&1; then
              echo "📦 Installing cargo-binstall..."
@@ -71,7 +71,7 @@ if [[ "$class" == "Personal" ]]; then
             fi
         done
     fi
-    
+
     # NPM Global Tools
     if command -v npm >/dev/null 2>&1; then
         echo "📦 Installing global NPM tools..."

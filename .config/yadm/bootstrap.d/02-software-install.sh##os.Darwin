@@ -85,7 +85,7 @@ if [[ -f "${HOME}/.config/yadm/Brewfile" ]]; then
     echo "📦 Installing packages from Brewfile..."
     # Ensure bundle tap is installed
     brew tap homebrew/bundle
-    
+
     if brew bundle install --file="${HOME}/.config/yadm/Brewfile"; then
         echo "✅ Brewfile installation successful"
     else

@@ -33,7 +33,7 @@ fi
 if ls "$HOME/.local/share/gnupg/.exported-keyring"/*.asc >/dev/null 2>&1; then
     echo "Importing keys..."
     gpg --import "$HOME/.local/share/gnupg/.exported-keyring"/*.asc 2>/dev/null || true
-    
+
     if [[ -f "$HOME/.local/share/gnupg/.exported-keyring/ownertrust.txt" ]]; then
         gpg --import-ownertrust "$HOME/.local/share/gnupg/.exported-keyring/ownertrust.txt" 2>/dev/null || true
     fi
