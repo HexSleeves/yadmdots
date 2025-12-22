@@ -4,7 +4,7 @@ argument-hint: [base-branch] [from-branch]
 allowed-tools: Bash(git:*), Bash(gh:*)
 ---
 
-# Create Pull Request
+# PR
 
 Create a pull request with comprehensive documentation.
 

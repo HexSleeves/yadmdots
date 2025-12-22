@@ -538,12 +538,13 @@
     "!**/*.mdc"
   ],
   "geminicodeassist.project": "citric-thought-vrqlm",
-  "sonarlint.automaticAnalysis": true,
+  "sonarlint.automaticAnalysis": false,
   "sonarlint.focusOnNewCode": false,
   "[cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  }
+  },
+  "sonarlint.ideLabsEnabled": true
 }

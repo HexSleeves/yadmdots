@@ -3,7 +3,7 @@ description: Research library/API documentation with comprehensive web fetching
 argument-hint: [library or API name]
 ---
 
-# API Documentation Research
+# API Research
 
 Research comprehensive documentation for: $ARGUMENTS
 

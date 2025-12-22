@@ -3,11 +3,11 @@ description: Generate comprehensive tests with edge case coverage
 argument-hint: [file or function to test]
 ---
 
-# Test Generation
+# Test
 
 Generate comprehensive tests for: $ARGUMENTS
 
-## Test Generation Workflow
+## Test Workflow
 
 ### 1. Understand the Code
 
