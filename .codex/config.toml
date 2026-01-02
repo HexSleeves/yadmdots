@@ -1,0 +1,7 @@
+model = "gpt-5.2-codex"
+model_reasoning_effort = "low"
+[projects."/Users/jacob.lecoq.ext"]
+trust_level = "untrusted"
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.2-codex"

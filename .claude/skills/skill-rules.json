@@ -1,7 +1,34 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "description": "Skill activation triggers for Claude Code. Controls when skills automatically suggest or block actions.",
   "skills": {
+    "orchestration": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "critical",
+      "description": "Multi-agent orchestration patterns for complex development workflows",
+      "promptTriggers": {
+        "keywords": [
+          "orchestrate",
+          "coordinate",
+          "multi-agent",
+          "parallel agents",
+          "complex task",
+          "multiple domains",
+          "system-wide",
+          "migration",
+          "comprehensive",
+          "full stack"
+        ],
+        "intentPatterns": [
+          "(implement|build|create|design).*?(full|complete|comprehensive|system-wide)",
+          "(coordinate|orchestrate|manage).*?(agent|task|workflow)",
+          "(multiple|several|parallel).*?(domain|area|aspect)",
+          "(frontend.*backend|backend.*frontend)",
+          "migration.*?(to|from)"
+        ]
+      }
+    },
     "skill-developer": {
       "type": "domain",
       "enforcement": "suggest",
@@ -63,13 +90,12 @@
       },
       "fileTriggers": {
         "pathPatterns": [
-          "blog-api/src/**/*.ts",
-          "auth-service/src/**/*.ts",
-          "notifications-service/src/**/*.ts",
           "backend/**/*.ts",
           "api/**/*.ts",
           "server/**/*.ts",
-          "services/**/*.ts"
+          "services/**/*.ts",
+          "src/api/**/*.ts",
+          "src/server/**/*.ts"
         ],
         "pathExclusions": ["**/*.test.ts", "**/*.spec.ts"],
         "contentPatterns": [
@@ -82,8 +108,8 @@
       }
     },
     "frontend-dev-guidelines": {
-      "type": "guardrail",
-      "enforcement": "block",
+      "type": "domain",
+      "enforcement": "suggest",
       "priority": "high",
       "description": "React/TypeScript best practices including MUI v7 compatibility",
       "promptTriggers": {
@@ -115,7 +141,8 @@
           "frontend/src/**/*.ts",
           "client/src/**/*.tsx",
           "client/src/**/*.ts",
-          "src/**/*.tsx"
+          "src/**/*.tsx",
+          "app/**/*.tsx"
         ],
         "pathExclusions": [
           "**/*.test.tsx",
@@ -127,7 +154,7 @@
           "**/tsconfig.json"
         ],
         "contentPatterns": [
-          "from '@mui/material';",
+          "from '@mui/material'",
           "import.*Grid.*from.*@mui",
           "<Grid ",
           "Grid2",
@@ -135,19 +162,13 @@
           "makeStyles",
           "@material-ui/core"
         ]
-      },
-      "blockMessage": "⚠️ BLOCKED - Frontend Best Practices Required\n\n📋 REQUIRED ACTION:\n1. Use Skill tool: 'frontend-dev-guidelines'\n2. Review MUI v7 patterns (Grid uses size={{}} prop, NOT xs/sm props)\n3. Check React/TypeScript best practices\n4. Use proper styling patterns\n5. Then retry this edit\n\nReason: Enforce MUI v7 compatibility and React best practices\nFile: {file_path}\n\n💡 TIP: Add '// @skip-validation' comment to skip future checks",
-      "skipConditions": {
-        "sessionSkillUsed": true,
-        "fileMarkers": ["@skip-validation"],
-        "envOverride": "SKIP_FRONTEND_GUIDELINES"
       }
     },
     "route-tester": {
       "type": "domain",
       "enforcement": "suggest",
-      "priority": "high",
-      "description": "Testing authenticated API routes with JWT cookie-based auth",
+      "priority": "medium",
+      "description": "Testing authenticated API routes",
       "promptTriggers": {
         "keywords": [
           "test route",
@@ -156,14 +177,12 @@
           "route testing",
           "API testing",
           "authenticated route",
-          "JWT testing",
-          "cookie auth",
           "test with auth"
         ],
         "intentPatterns": [
           "(test|debug|verify).*?(route|endpoint|API)",
           "(how to|how do I).*?test.*?(route|endpoint|API)",
-          "test.*?(authenticated|auth|JWT|cookie)"
+          "test.*?(authenticated|auth)"
         ]
       },
       "fileTriggers": {
@@ -224,7 +243,7 @@
       "low": "Optional - Trigger only for explicit matches"
     },
     "customization": {
-      "pathPatterns": "Adjust to match your project structure (blog-api, auth-service, etc.)",
+      "pathPatterns": "Adjust to match your project structure",
       "keywords": "Add domain-specific terms relevant to your project",
       "intentPatterns": "Use regex for flexible user intent matching"
     }

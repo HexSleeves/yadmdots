@@ -158,8 +158,17 @@ handle_failure() {
 			if execute_script "$script_path"; then
 				return 0
 			else
+				# Retry failed - recursively handle failure, but preserve that script failed
+				local retry_result
 				handle_failure "$script_path"
-				return $?
+				retry_result=$?
+				# If user chose to continue/skip, we still need to indicate failure
+				if [[ $retry_result -eq 0 ]]; then
+					# User chose continue/skip, but script still failed - return 1 to track failure
+					return 1
+				fi
+				# User chose quit - propagate the quit signal
+				return $retry_result
 			fi
 			;;
 		[Ss]*)

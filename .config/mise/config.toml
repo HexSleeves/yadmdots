@@ -5,7 +5,7 @@ deno = "latest"
 go             = "latest"
 lua = "latest"
 neovim         = "nightly"
-node = "latest"
+node = "24"
 python = "latest"
 yamlfmt        = "latest"
 

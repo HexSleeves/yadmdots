@@ -17,6 +17,10 @@ echo "🔧 Configuring mise tools for '${class}' profile..."
 # Navigate to home directory for global installations
 cd "${HOME}"
 
+# Update mise itself first
+echo "🔄 Updating mise to latest version..."
+mise self-update -y
+
 # Function to install mise tool safely
 install_mise_tool() {
     local tool="$1"

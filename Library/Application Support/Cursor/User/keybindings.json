@@ -24,5 +24,9 @@
     "key": "shift+cmd+r",
     "command": "-vscode-augment.showRemoteAgentsPanel",
     "when": "vscode-augment.featureFlags.enableRemoteAgents"
+  },
+  {
+    "key": "cmd+m",
+    "command": "cursor.generateGitCommitMessage"
   }
 ]

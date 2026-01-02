@@ -44,6 +44,9 @@
   "editor.stickyScroll.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.bracketPairColorization.enabled": true,
+  "editor.rulers": [
+    120
+  ],
   // =====================================================================================
   // EDITOR — MINIMAP & INLINE
   // =====================================================================================
@@ -217,7 +220,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
@@ -236,7 +239,7 @@
     "editor.defaultFormatter": "mkhl.shfmt"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -253,7 +256,9 @@
   "go.inlayHints.compositeLiteralTypes": true,
   "go.inlayHints.constantValues": true,
   "go.inlayHints.functionTypeParameters": true,
-  "go.testFlags": ["-v"],
+  "go.testFlags": [
+    "-v"
+  ],
   // =====================================================================================
   // LUA (Sumneko) SETTINGS
   // =====================================================================================
@@ -274,7 +279,7 @@
       "connectionId": "https-sonar-cloud-bayer-com-"
     }
   ],
-  "sonarlint.ls.javaHome": "/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home",
+  "sonarlint.ls.javaHome": "/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home",
   "sonarlint.rules": {
     "typescript:S6819": {
       "level": "off"
@@ -283,6 +288,9 @@
       "level": "off"
     },
     "typescript:S6759": {
+      "level": "off"
+    },
+    "cpp:S125": {
       "level": "off"
     }
   },
@@ -324,7 +332,10 @@
   "cursor.terminal.usePreviewBox": true,
   "cursor.windowSwitcher.sidebarHoverCollapsed": true,
   "cursorStats.showTotalRequests": true,
-  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
+  "cursor.cpp.disabledLanguages": [
+    "plaintext",
+    "scminput"
+  ],
   "cursor.composer.queueMessageDefaultBehavior": "queue",
   "cursor.composer.usageSummaryDisplay": "always",
   "roo-cline.allowedCommands": [
@@ -395,12 +406,20 @@
   "amp.mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest", "--headless", "--isolated"],
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated"
+      ],
       "_target": "global"
     },
     "sequential-thinking": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
       "env": {}
     }
   },
@@ -457,7 +476,12 @@
       "tool": "Bash",
       "action": "ask",
       "matches": {
-        "cmd": ["*rm*rf*", "*find*exec*", "*find*delete*", "*git*push*"]
+        "cmd": [
+          "*rm*rf*",
+          "*find*exec*",
+          "*find*delete*",
+          "*git*push*"
+        ]
       }
     },
     {
@@ -527,7 +551,7 @@
   "amp.tab.hoverDiagnosticSuggestions": true,
   "gitlens.outputLevel": "error",
   "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "material-icon-theme",
   "markdownlint.lintWorkspaceGlobs": [
     "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
     "!**/*.code-search",
@@ -538,7 +562,7 @@
     "!**/*.mdc"
   ],
   "geminicodeassist.project": "citric-thought-vrqlm",
-  "sonarlint.automaticAnalysis": false,
+  "sonarlint.automaticAnalysis": true,
   "sonarlint.focusOnNewCode": false,
   "[cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
@@ -546,5 +570,20 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "sonarlint.ideLabsEnabled": true
+  "sonarlint.ideLabsEnabled": true,
+  "cursor.general.disableHttp2": true,
+  "debug.javascript.unmapMissingSources": true,
+  "cursorStats.showProgressBars": true,
+  "rust-analyzer.check.command": "clippy",
+  "remote.SSH.remotePlatform": {
+    "yankee-jig.exe.xyz": "linux",
+    "crow-wolf.exe.xyz": "linux",
+    "meteor-edit.exe.xyz": "linux",
+    "switch-rain.exe.xyz": "linux",
+    "yankee": "linux",
+    "trout-eagle.exe.xyz": "linux"
+  },
+  "debug.showBreakpointsInOverviewRuler": true,
+  "notebook.diff.overviewRuler": true,
+  "security.promptForRemoteFileProtocolHandling": false,
 }
